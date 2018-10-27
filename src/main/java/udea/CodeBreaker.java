@@ -2,8 +2,6 @@ package udea;
 
 import java.util.Random;
 
-import javax.sql.rowset.spi.TransactionalWriter;
-
 public class CodeBreaker {
 	
 	public String secret;
@@ -37,12 +35,10 @@ public class CodeBreaker {
 		return (number!=null) && (number.length()==4);
 	}
 	
-	public boolean validateNumeric(String number)  {
-		
-		int numeric;
+	public boolean validateNumeric(String number)  {				
 		boolean result;
 		try {
-			numeric = Integer.parseInt(number);
+			Integer.parseInt(number);
 			result=true;
 		} catch (NumberFormatException c){
 			result=false;
